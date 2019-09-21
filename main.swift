@@ -2,23 +2,62 @@
 
 import Foundation
 
-let 𝐴 = 0x1d434
-let 𝑎 = 0x1d44e
-
-let 𝕬 = 0x1d56c
-let 𝖆 = 0x1d586
+// script choices
+// allowed uppercase letters, lowercase letters, and fallback if any
+// must be reference type, otherwise it can't contain a reference to itself
+class Script {
+	let A: Int
+	let a: Int
+	let allowedUppercase: String
+	let allowedLowercase: String
+	let fallback: Script?
+	
+	init(A: Int, a: Int, allowedUppercase: String, allowedLowercase: String, fallback: Script? = nil) {
+		self.A = A
+		self.a = a
+		self.allowedUppercase = allowedUppercase
+		self.allowedLowercase = allowedLowercase
+		self.fallback = fallback
+	}
+}
+struct ScriptSelection {
+	// missing lowercase h
+	static let script = Script(
+		A: 0x1d434,
+		a: 0x1d44e,
+		allowedUppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+		allowedLowercase: "abcdefgijklmnopqrstuvwxyz",
+		fallback: nil
+	)
+	// missing several capital letters
+	static let blackletterLight = Script(
+		A: 0x1d504,
+		a: 0x1d51e,
+		allowedUppercase: "ABDEFGJKLMNOPQSTUVWXY",
+		allowedLowercase: "abcdefghijklmnopqrstuvwxyz",
+		fallback: ScriptSelection.blackletterBold
+	)
+	// all letters!
+	static let blackletterBold = Script(
+		A: 0x1d56c,
+		a: 0x1d586,
+		allowedUppercase:"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+		allowedLowercase: "abcdefghijklmnopqrstuvwxyz",
+		fallback: nil
+	)
+}
 
 let A = 0x41
 let a = 0x61
 
-var blackletter = false
+var script = ScriptSelection.script
 
 if CommandLine.arguments.contains("-b") {
-	blackletter = true
+	script = ScriptSelection.blackletterBold
 }
-
-let new_A = (blackletter) ? 𝕬 : 𝐴
-let new_a = (blackletter) ? 𝖆 : 𝑎
+if CommandLine.arguments.contains("-B") {
+	script = ScriptSelection.blackletterLight
+}
 
 let fh = FileHandle.standardInput
 
@@ -27,20 +66,21 @@ while (true) {
 	if data.count == 0 { // returns empty on EOF
 		break
 	}
-	var str = String(data: data, encoding: .utf8)!
-	str = String(str.map { (c) in
+	let str = String(data: data, encoding: .utf8)!
+	for char in str {
+		var c = char
 		// convert to script letters
-		if "ABCDEFGHIJKLMNOPQRSTUVWXYZ".contains(c) {
-			// it's a letter
-			return Character(UnicodeScalar(Int(c.asciiValue!) + (new_A - A))!)
+		if script.allowedUppercase.contains(c) {
+			c = Character(UnicodeScalar(Int(c.asciiValue!) + (script.A - A))!)
+		} else if (script.fallback?.allowedUppercase.contains(c) ?? false) {
+			c = Character(UnicodeScalar(Int(c.asciiValue!) + (script.fallback!.A - A))!)
 		}
-		// note the absence of lowercase h, it's either not there or someplace else
-		if "abcdefgijklmnopqrstuvwxyz".contains(c) {
-			// it's a letter
-			return Character(UnicodeScalar(Int(c.asciiValue!) + (new_a - a))!)
+		if script.allowedLowercase.contains(c) {
+			c = Character(UnicodeScalar(Int(c.asciiValue!) + (script.a - a))!)
+		} else if (script.fallback?.allowedLowercase.contains(c) ?? false) {
+			c = Character(UnicodeScalar(Int(c.asciiValue!) + (script.fallback!.a - a))!)
 		}
-		return c
-	})
-	print("\(str)", terminator: "")
+		print("\(c)", terminator: "")
+	}
 }
 
