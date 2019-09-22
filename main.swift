@@ -1,4 +1,14 @@
-#!/usr/bin/env swift
+//
+// main.swift
+// unicode-scripterizer
+//
+// Created by ArgentWolf on 2019-09-21
+//
+// This is free and unencumbered software released into the public domain.
+// See COPYING.md for more information.
+//
+// vim:set noet fo=tcqr:
+//
 
 import Foundation
 
