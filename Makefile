@@ -7,7 +7,7 @@
 #
 
 unicode-scripterizer: *.swift
-	swiftc -g -lncurses -o unicode-scripterizer *.swift
+	swiftc -g -o unicode-scripterizer *.swift
 
 clean:
 	rm -f unicode-scripterizer
