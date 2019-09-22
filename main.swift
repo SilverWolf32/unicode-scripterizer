@@ -12,54 +12,6 @@
 
 import Foundation
 
-// script choices
-// allowed uppercase letters, lowercase letters, and fallback if any
-// must be reference type, otherwise it can't contain a reference to itself
-class Script {
-	let A: Int
-	let a: Int
-	let allowedUppercase: String
-	let allowedLowercase: String
-	let fallback: Script?
-	
-	init(A: Int, a: Int, allowedUppercase: String, allowedLowercase: String, fallback: Script? = nil) {
-		self.A = A
-		self.a = a
-		self.allowedUppercase = allowedUppercase
-		self.allowedLowercase = allowedLowercase
-		self.fallback = fallback
-	}
-}
-struct ScriptSelection {
-	// missing lowercase h
-	static let script = Script(
-		A: 0x1d434,
-		a: 0x1d44e,
-		allowedUppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-		allowedLowercase: "abcdefgijklmnopqrstuvwxyz",
-		fallback: nil
-	)
-	// missing several capital letters
-	static let blackletterLight = Script(
-		A: 0x1d504,
-		a: 0x1d51e,
-		allowedUppercase: "ABDEFGJKLMNOPQSTUVWXY",
-		allowedLowercase: "abcdefghijklmnopqrstuvwxyz",
-		fallback: ScriptSelection.blackletterBold
-	)
-	// all letters!
-	static let blackletterBold = Script(
-		A: 0x1d56c,
-		a: 0x1d586,
-		allowedUppercase:"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-		allowedLowercase: "abcdefghijklmnopqrstuvwxyz",
-		fallback: nil
-	)
-}
-
-let A = 0x41
-let a = 0x61
-
 var script = ScriptSelection.script
 
 if CommandLine.arguments.contains("-b") {
