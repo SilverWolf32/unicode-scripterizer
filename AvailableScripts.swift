@@ -43,4 +43,10 @@ struct ScriptSelection {
 		to: "ᚨᛒᚳᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᚩᛈᛩᚱᛋᛏᚢᚡᚥᛪᛦᛎᚨᛒᚳᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᚩᛈᛩᚱᛋᛏᚢᚡᚥᛪᛦᛎ",
 		fallback: nil
 	)!
+	// missing Q (well, it's there, but not in fonts) and X
+	static let smallCaps = TRScript(
+		from: "abcdefghijklmnoprstuvwyz",
+		to: "ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘʀꜱᴛᴜᴠᴡʏᴢ",
+		fallback: nil
+	)!
 }
