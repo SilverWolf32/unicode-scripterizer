@@ -12,13 +12,13 @@
 
 import Foundation
 
-var script = ScriptSelection.script
+var script: Script = ScriptSelection.script
 
 if CommandLine.arguments.contains("-b") {
-	script = ScriptSelection.blackletterBold
+	script = ScriptSelection.blackletterLight
 }
 if CommandLine.arguments.contains("-B") {
-	script = ScriptSelection.blackletterLight
+	script = ScriptSelection.blackletterBold
 }
 
 let fh = FileHandle.standardInput
