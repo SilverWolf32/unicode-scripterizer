@@ -14,7 +14,7 @@
 // This is a struct instead of an enum so it can contain complex values (Scripts).
 struct ScriptSelection {
 	// missing lowercase h
-	static let script = Script(
+	static let script = ContiguousScript(
 		A: 0x1d434,
 		a: 0x1d44e,
 		allowedUppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -22,7 +22,7 @@ struct ScriptSelection {
 		fallback: nil
 	)
 	// missing several capital letters
-	static let blackletterLight = Script(
+	static let blackletterLight = ContiguousScript(
 		A: 0x1d504,
 		a: 0x1d51e,
 		allowedUppercase: "ABDEFGJKLMNOPQSTUVWXY",
@@ -30,7 +30,7 @@ struct ScriptSelection {
 		fallback: ScriptSelection.blackletterBold
 	)
 	// all letters!
-	static let blackletterBold = Script(
+	static let blackletterBold = ContiguousScript(
 		A: 0x1d56c,
 		a: 0x1d586,
 		allowedUppercase:"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -38,7 +38,3 @@ struct ScriptSelection {
 		fallback: nil
 	)
 }
-
-// Normal A and a, for the start of the conversion.
-let A = 0x41
-let a = 0x61

@@ -11,19 +11,23 @@
 //
 
 // script choices
-// this has to be a reference type (i.e. a class), otherwise it couldn't contain a reference to itself
-class Script {
-	let A: Int
-	let a: Int
-	let allowedUppercase: String
-	let allowedLowercase: String
-	let fallback: Script?
+protocol Script {
 	
-	init(A: Int, a: Int, allowedUppercase: String, allowedLowercase: String, fallback: Script? = nil) {
-		self.A = A
-		self.a = a
-		self.allowedUppercase = allowedUppercase
-		self.allowedLowercase = allowedLowercase
-		self.fallback = fallback
+	func convert(_ str: String) -> String
+	
+	func convertCharacter(_ char: Character) -> Character
+	
+}
+extension Script {
+	
+	// default methods
+	func convert(_ str: String) -> String {
+		var newStr = String()
+		newStr.reserveCapacity(str.count)
+		for char in str {
+			newStr.append(convertCharacter(char))
+		}
+		return newStr
 	}
+	
 }

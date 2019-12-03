@@ -29,21 +29,7 @@ while (true) {
 		break
 	}
 	let str = String(data: data, encoding: .utf8)!
-	for char in str {
-		var c = char
-		// convert to script letters
-		if script.allowedUppercase.contains(c) {
-			c = Character(UnicodeScalar(Int(c.asciiValue!) + (script.A - A))!)
-		} else if (script.fallback?.allowedUppercase.contains(c) ?? false) {
-			c = Character(UnicodeScalar(Int(c.asciiValue!) + (script.fallback!.A - A))!)
-		}
-		if script.allowedLowercase.contains(c) {
-			c = Character(UnicodeScalar(Int(c.asciiValue!) + (script.a - a))!)
-		} else if (script.fallback?.allowedLowercase.contains(c) ?? false) {
-			c = Character(UnicodeScalar(Int(c.asciiValue!) + (script.fallback!.a - a))!)
-		}
-		print("\(c)", terminator: "")
-	}
+	print(script.convert(str), terminator: "")
 	fflush(stdout)
 }
 
