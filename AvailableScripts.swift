@@ -37,4 +37,10 @@ struct ScriptSelection {
 		allowedLowercase: "abcdefghijklmnopqrstuvwxyz",
 		fallback: nil
 	)
+	// all letters, but only one case - information lost!
+	static let runes = TRScript(
+		from: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+		to: "ᚨᛒᚳᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᚩᛈᛩᚱᛋᛏᚢᚡᚥᛪᛦᛎᚨᛒᚳᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᚩᛈᛩᚱᛋᛏᚢᚡᚥᛪᛦᛎ",
+		fallback: nil
+	)!
 }

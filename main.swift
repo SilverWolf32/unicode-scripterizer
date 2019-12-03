@@ -20,6 +20,9 @@ if CommandLine.arguments.contains("-b") {
 if CommandLine.arguments.contains("-B") {
 	script = ScriptSelection.blackletterBold
 }
+if CommandLine.arguments.contains("-r") {
+	script = ScriptSelection.runes
+}
 
 let fh = FileHandle.standardInput
 
