@@ -44,5 +44,6 @@ while (true) {
 		}
 		print("\(c)", terminator: "")
 	}
+	fflush(stdout)
 }
 
