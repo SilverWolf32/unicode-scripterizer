@@ -11,7 +11,7 @@ class RuneSpaceConverter: Script {
 	
 	func convertSpace(_ c: Character) -> String {
 		if c == " " {
-			return " ᛫ "
+			return " ᛫ "
 		}
 		return String(c)
 	}
