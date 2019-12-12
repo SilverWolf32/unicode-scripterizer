@@ -39,8 +39,8 @@ struct ScriptSelection {
 	)
 	// all letters, but only one case - information lost!
 	static let runes = TRScript(
-		from: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
-		to: "ᚨᛒᚳᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᚩᛈᛩᚱᛋᛏᚢᚡᚥᛪᛦᛎᚨᛒᚳᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᚩᛈᛩᚱᛋᛏᚢᚡᚥᛪᛦᛎ",
+		from: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ",
+		to: "ᚨᛒᚳᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᚩᛈᛩᚱᛋᛏᚢᚡᚥᛪᛦᛎᚨᛒᚳᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᚩᛈᛩᚱᛋᛏᚢᚡᚥᛪᛦᛎ᛫",
 		fallback: nil
 	)!
 	// missing Q (well, it's there, but not in fonts) and X
