@@ -23,6 +23,9 @@ if CommandLine.arguments.contains("-B") {
 if CommandLine.arguments.contains("-r") {
 	script = ScriptSelection.runes
 }
+if CommandLine.arguments.contains("-R") {
+	script = ScriptSelection.icelandicRunes
+}
 if CommandLine.arguments.contains("-c") {
 	script = ScriptSelection.smallCaps
 }

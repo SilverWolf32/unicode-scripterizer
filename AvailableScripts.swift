@@ -43,6 +43,12 @@ struct ScriptSelection {
 		to: "ᚨᛒᚳᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᚩᛈᛩᚱᛋᛏᚢᚡᚥᛪᛦᛎᚨᛒᚳᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᚩᛈᛩᚱᛋᛏᚢᚡᚥᛪᛦᛎ᛫",
 		fallback: RuneSpaceConverter()
 	)!
+	// see https://git.sr.ht/~alva/icelandic-runes
+	static let icelandicRunes = TRScript(
+		from: "aåábcdðeéfghiíjklmnoópqrstuúvwxyýzþäæöAÅÁBCDÐEÉFGHIÍJKLMNOÓPQRSTUÚVWXYÝZÞÄÆÖ",
+		to:   "ᛆᚨᚨᛒᛍᛑᚧᛂᛖᚠᚵᚼᛁᛇᛃᚴᛚᛘᚿᚮᛟᛔᛩᚱᛋᛐᚢᚤᚡᚥᛪᛦᛨᛎᚦᛅᛅᚯᛆᚨᚨᛒᛍᛑᚧᛂᛖᚠᚵᚼᛁᛇᛃᚴᛚᛘᚿᚮᛟᛔᛩᚱᛋᛐᚢᚤᚡᚥᛪᛦᛨᛎᚦᛅᛅᚯ",
+		fallback: RuneSpaceConverter()
+	)!
 	// missing Q (well, it's there, but not in fonts) and X
 	static let smallCaps = TRScript(
 		from: "abcdefghijklmnoprstuvwyz",
