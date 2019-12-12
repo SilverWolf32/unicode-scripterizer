@@ -29,5 +29,8 @@ extension Script {
 		}
 		return newStr
 	}
+	func convertCharacter(_ c: Character) -> Character {
+		return c
+	}
 	
 }

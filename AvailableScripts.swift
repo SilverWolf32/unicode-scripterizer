@@ -41,7 +41,7 @@ struct ScriptSelection {
 	static let runes = TRScript(
 		from: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ",
 		to: "ᚨᛒᚳᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᚩᛈᛩᚱᛋᛏᚢᚡᚥᛪᛦᛎᚨᛒᚳᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᚩᛈᛩᚱᛋᛏᚢᚡᚥᛪᛦᛎ᛫",
-		fallback: nil
+		fallback: RuneSpaceConverter()
 	)!
 	// missing Q (well, it's there, but not in fonts) and X
 	static let smallCaps = TRScript(
