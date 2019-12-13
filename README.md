@@ -35,8 +35,12 @@ echo 'Whee, blackletter!' | unicode-scripterizer -b
     𝔄𝔅_𝔇𝔈𝔉𝔊__𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔_𝔖𝔗𝔘𝔙𝔚𝔛𝔜_  
     𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷
   - Missing letters will be substituted with Blackletter Bold, which may look funny
-
-(The code can currently only handle conversions to contiguous blocks of letters. Other sets could potentially be done with fallbacks, but that would be an awful kludge and a rewrite would be better.)
+- Runes
+  - `-r` or `-R`
+  - Mostly Elder Futhark, with a different C - ᚳ
+  - Case is lost in the conversion!
+  - Converts spaces to runic punctuation dots
+  - `-R` will add hair spaces around the space dots for readability
 
 ## License
 
