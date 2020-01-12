@@ -25,14 +25,10 @@ if CommandLine.arguments.contains("-r") {
 }
 if CommandLine.arguments.contains("-R") {
 	script = ScriptSelection.runes
-	((script as! TRScript).fallback as! RuneSpaceConverter).mode = .spaced
+	(script as! RuneScript).spacingMode = .spaced
 }
 if CommandLine.arguments.contains("-i") {
 	script = ScriptSelection.icelandicRunes
-}
-if CommandLine.arguments.contains("-I") {
-	script = ScriptSelection.icelandicRunes
-	((script as! TRScript).fallback as! RuneSpaceConverter).mode = .spaced
 }
 if CommandLine.arguments.contains("-c") {
 	script = ScriptSelection.smallCaps
