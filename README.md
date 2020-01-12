@@ -37,7 +37,7 @@ echo 'Whee, blackletter!' | unicode-scripterizer -b
   - Missing letters will be substituted with Blackletter Bold, which may look funny
 - Runes
   - `-r` or `-R`
-  - Mostly Elder Futhark, with a different C - ᚳ
+  - Mostly Elder Futhark, with some substitutions for letters with no equivalent
   - Case is lost in the conversion!
   - Converts spaces to runic punctuation dots
   - `-R` will add hair spaces around the space dots for readability
