@@ -20,7 +20,7 @@ class RuneSpaceConverter: Script {
 		if c == " " {
 			switch mode {
 				case .normal:
-					return "᛫"
+					return "᛫​"
 				case .spaced:
 					return " ᛫ "
 			}
