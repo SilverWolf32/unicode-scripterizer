@@ -14,6 +14,9 @@ import Foundation
 
 var script: Script = ScriptSelection.script
 
+if CommandLine.arguments.contains("-S") {
+	script = ScriptSelection.fancyScript
+}
 if CommandLine.arguments.contains("-b") {
 	script = ScriptSelection.blackletterLight
 }
