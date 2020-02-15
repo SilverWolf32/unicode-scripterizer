@@ -36,6 +36,9 @@ if CommandLine.arguments.contains("-i") {
 if CommandLine.arguments.contains("-c") {
 	script = ScriptSelection.smallCaps
 }
+if CommandLine.arguments.contains("-d") {
+	script = ScriptSelection.doublestruck
+}
 
 let fh = FileHandle.standardInput
 
