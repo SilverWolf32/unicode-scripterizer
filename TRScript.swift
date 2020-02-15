@@ -6,6 +6,12 @@ class TRScript: Script {
 	
 	init?(from: String, to: String, fallback: Script?) {
 		if (from.count != to.count) {
+			print("*** Error in script: mismatched lengths ***")
+			for i in 0..<min(from.count, to.count) {
+				let a = from[from.index(from.startIndex, offsetBy: i)]
+				let b =     to[to.index(from.startIndex, offsetBy: i)]
+				print("\(a) \(b)")
+			}
 			return nil
 		}
 		self.from = from
