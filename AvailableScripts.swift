@@ -45,7 +45,7 @@ struct ScriptSelection {
 	// all letters, but only one case - information lost!
 	static let runes = RuneScript(
 		from: "abcdefghijklmnopqrstuvwxyz",
-		to:   "ᚨᛒᚲᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᛟᛈᛩᚱᛊᛏᚢᚢᚹᛪᛦᛎ",
+		to:   "ᚨᛒᚲᛞᛖᚠᚷᚺᛁᛃᚴᛚᛗᚾᛟᛈᛩᚱᛋᛏᚢᚢᚹᛪᛦᛎ",
 		fallback: nil
 	)!
 	// see https://git.sr.ht/~alva/icelandic-runes
